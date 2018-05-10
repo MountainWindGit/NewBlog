@@ -45,13 +45,12 @@ class Draw {
 
 let arr = [];
 
-
 class HomePage extends React.Component {
     componentDidMount(){
         const canvas = this.refs.canvas;
         const context = canvas.getContext('2d');
         canvas.width = document.documentElement.clientWidth;
-        canvas.height = document.documentElement.clientHeight;
+        canvas.height = document.documentElement.clientHeight - 4;
         //
         function start(){
             window.requestAnimationFrame(start);
@@ -75,17 +74,22 @@ class HomePage extends React.Component {
     render(){
         return (
            <React.Fragment>
-               <ul className="nav-bar">
-                    {
-                        nav.map(item => {
-                            return (
-                                <li key={item}>
-                                    <a href="">{item}</a>
-                                </li>
-                            )
-                        })
-                    }
-               </ul>
+               <nav className="nav-bar">
+                    <div className="flex-box">
+                        <h2 className="title">less is more</h2>
+                        <ul className="nav-ul">
+                                {
+                                    nav.map(item => {
+                                        return (
+                                            <li key={item}>
+                                                <a href="">{item}</a>
+                                            </li>
+                                        )
+                                    })
+                                }
+                        </ul>
+                    </div>
+               </nav>
                <canvas id="canvas" ref='canvas'></canvas>
            </React.Fragment>
         )
