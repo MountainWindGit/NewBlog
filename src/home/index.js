@@ -1,8 +1,7 @@
 import React from 'react';
 import './index.css';
+import {Link} from 'react-router-dom';
 
-
-const nav = ['关于我', '博客', 'Github'];
 //随机函数
 function random(min, max){
     return Math.floor(Math.random() * (max-min) + min);
@@ -78,15 +77,9 @@ class HomePage extends React.Component {
                     <div className="flex-box">
                         <h2 className="title">less is more</h2>
                         <ul className="nav-ul">
-                                {
-                                    nav.map(item => {
-                                        return (
-                                            <li key={item}>
-                                                <a href="">{item}</a>
-                                            </li>
-                                        )
-                                    })
-                                }
+                            <li><Link to='/'>关于我</Link></li>
+                            <li><Link to='/'>博客</Link></li>
+                            <li><a href="https://github.com/MengSirGit/" target="_blank">Github</a></li>
                         </ul>
                     </div>
                </nav>
