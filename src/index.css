@@ -10,3 +10,14 @@ a{text-decoration:none;}
 a:link{color:#009;} 
 a:visited{color:#800080;} 
 a:hover,a:active,a:focus{color:#c00;text-decoration:none;} 
+
+.clearfix:after{
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0;
+}
+.clearfix{
+    zoom:1;
+}

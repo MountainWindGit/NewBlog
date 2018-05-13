@@ -1,0 +1,129 @@
+.intro-flex{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.container{
+    float: left;
+    width: 740px;
+    margin-top: 30px;
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
+    padding: 15px 20px;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.container .head-por{
+    width:120px;
+    height: 120px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.info-me {
+    text-align: center;
+    line-height: 2.4;
+    margin-top: 25px;
+    border-bottom: 1px dotted #e0e0e0;
+    padding-bottom: 15px;
+}
+.info-me p{
+    font-size: 14px;
+    color: #666;
+}
+.info-me span{
+    padding: 0 8px;
+}
+
+.menu-fixed{
+    position: fixed;
+    top: 30px;
+    right: 50%;
+    width: 160px;
+    margin-right: -415px;
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding: 15px 10px;
+}
+
+.menu-fixed li {
+    position: relative;
+    line-height: 2.4;
+    padding-left: 10px;
+    border-bottom: 1px dotted #ececec;
+}
+.menu-fixed li::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    margin-top: -2px;
+    background-color: #e0e0e0;
+}
+.menu-fixed li:nth-of-type(4){
+    border-bottom: 0;
+}
+.menu-fixed li a{
+    font-size: 14px;
+    color: #8d8d8d;
+}
+.menu-fixed li a:hover{
+    color: #333;
+}
+
+.skills{
+    padding-left: 30px;
+    margin-top: 35px;
+}
+
+.skills li{
+    position: relative;
+    width: 516px;
+    height: 12px;
+    background-color: #e6e6e6;
+    margin-bottom:35px;
+}
+.skills li p{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: 9;
+    background-color: #333;
+}
+/* 
+.skills .html-anima{
+    background-color: #f30;
+} */
+
+.skills li::after{
+    position: absolute;
+    top: -22px;
+    left: 0;
+    font-size: 14px;
+    color:#8d8d8d;
+}
+
+.skills .html::after{
+    content: 'HTML+CSS3';
+}
+.skills .javascript::after{
+    content: 'Javascript';
+}
+.skills .react::after{
+    content: 'React';
+}
+.skills .query::after{
+    content: 'JQuery';
+}
+.skills .node::after{
+    content: 'Node';
+}
+.skills .photoshop::after{
+    content: 'Photoshop';
+}
