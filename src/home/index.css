@@ -37,8 +37,8 @@
     height: 1px;
     top: 50%;
     left: 0;
-    /* margin-top: -1px; */
-    background-color: #333;
+    margin-top: 3px;
+    background-color: #636363;
     z-index: 10;
     -webkit-transition: width .3s ease;
        -moz-transition: width .3s ease;
