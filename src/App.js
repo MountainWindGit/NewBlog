@@ -3,7 +3,7 @@ import {Route} from 'react-router-dom';
 
 import HomePage from './home/';
 import About from './about/';
-import Blog from './blog/';
+import {views as Blog} from './blog/';
 
 const App = () => {
     return (

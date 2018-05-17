@@ -5,5 +5,6 @@ import ShortCut from './short';
 export default () => (
     <main className="main-box">
         <Article />
+        <ShortCut />
     </main>
 )

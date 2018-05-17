@@ -1,13 +1,5 @@
-import React from 'react';
-import './index.css';
-import Head from './head';
-import Main from './main';
+import views from './views';
+import * as actions from './actions';
+import reducer from './reducer';
 
-const Blog = () => (
-    <React.Fragment>
-        <Head />
-        <Main />
-    </React.Fragment>
-)
-
-export default Blog;
+export {views, actions, reducer};
