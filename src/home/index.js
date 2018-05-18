@@ -50,7 +50,7 @@ class HomePage extends React.Component {
         const context = canvas.getContext('2d');
         canvas.width = document.documentElement.clientWidth;
         canvas.height = document.documentElement.clientHeight - 4;
-        //
+        //逐帧绘制
         function start(){
             window.requestAnimationFrame(start);
             context.clearRect(0, 0, canvas.width, canvas.height);

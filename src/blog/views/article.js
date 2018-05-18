@@ -13,10 +13,10 @@ const CunkLeft = ({labels}) => (
     </div>
 )
 //文章标题简介
-const CunkRight = ({title, intro}) => {
+const CunkRight = ({id, title, intro}) => {
     return (
         <div className="cunk-right">
-            <h4 className="caption">{title}</h4>
+            <h4 className="caption"><a href="" id={id}>{title}</a></h4>
             <p className="intro">
                 {intro}
             </p>

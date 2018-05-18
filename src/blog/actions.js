@@ -9,12 +9,16 @@ export const artGainSuccess = (result) => {
 
 export const artGain = (label) => {
     return (dispatch) => {
-        let apiUrl = '';
-        if(label){
+        let apiUrl = '',
+            n = Number(label);
+        if(typeof label === 'string'){
             apiUrl = `/show?label=${label}`;
+        }else if(!isNaN(n)){
+            apiUrl = `/show?id=${label}`;
         }else{
             apiUrl = `/show`;
         }
+        console.log(apiUrl);
         return fetch(apiUrl).then(res => {
             // console.log(res);
             if(res.status !== 200){
