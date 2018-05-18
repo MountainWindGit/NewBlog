@@ -7,17 +7,22 @@ export const artGainSuccess = (result) => {
     }
 }
 
-export const artGain = () => {
+export const artGain = (label) => {
     return (dispatch) => {
-        const apiUrl = `/show`;
+        let apiUrl = '';
+        if(label){
+            apiUrl = `/show?label=${label}`;
+        }else{
+            apiUrl = `/show`;
+        }
         return fetch(apiUrl).then(res => {
             // console.log(res);
             if(res.status !== 200){
                 throw new Error('Fail to get response with status ' + res.status);
             }
             res.json().then(resJson => {
-                // console.log(resJson);
-                dispatch(artGainSuccess(resJson));
+                let resReverse = resJson.reverse();
+                dispatch(artGainSuccess(resReverse));
             }).catch(err => {
                 console.log(err);
             })

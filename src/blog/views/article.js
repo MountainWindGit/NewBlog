@@ -8,7 +8,7 @@ const CunkLeft = ({labels}) => (
         <div className="thum"></div>
         <div className="label-b">
             <span className="time">2018-05-16</span>
-            <span className="classify">{labels}</span>
+            <span className={`classify ${labels}`}>{labels}</span>
         </div>
     </div>
 )
@@ -39,7 +39,6 @@ class ArticleList extends React.Component {
                 <ul className="list-con">
                 {
                     data.map(item => {
-                        console.log(item);
                         return (
                             <li className="list-cunk" key={item.id}>
                                 <CunkLeft {...item}/>
@@ -56,6 +55,7 @@ class ArticleList extends React.Component {
 }
 //绑定文章数据
 const mapStateToProps = (state) => {
+    // console.log(state);
     return {
         data: state.article
     }
