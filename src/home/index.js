@@ -66,8 +66,8 @@ class HomePage extends React.Component {
             if(arr.length < 15){
                 arr.push(new Draw(canvas, context));
             }
-            setTimeout(fn, 300);
-        },300)
+            setTimeout(fn, 800);
+        },800)
         start();
     }
     render(){

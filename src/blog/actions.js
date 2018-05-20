@@ -7,8 +7,10 @@ export const artGainSuccess = (result) => {
     }
 }
 
+
 export const artGain = (label) => {
     return (dispatch) => {
+        console.log(label);
         let apiUrl = '',
             n = Number(label);
         if(typeof label === 'string'){
@@ -18,7 +20,6 @@ export const artGain = (label) => {
         }else{
             apiUrl = `/show`;
         }
-        console.log(apiUrl);
         return fetch(apiUrl).then(res => {
             // console.log(res);
             if(res.status !== 200){

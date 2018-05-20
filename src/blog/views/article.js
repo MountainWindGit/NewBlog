@@ -1,6 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 import * as actions from '../actions';
+import {actions as actionsDist} from '../../detail/';
 
 //发布时间与分类
 const CunkLeft = ({labels}) => (
@@ -13,21 +15,43 @@ const CunkLeft = ({labels}) => (
     </div>
 )
 //文章标题简介
-const CunkRight = ({id, title, intro}) => {
-    return (
-        <div className="cunk-right">
-            <h4 className="caption"><a href="" id={id}>{title}</a></h4>
-            <p className="intro">
-                {intro}
-            </p>
-        </div>
-    )
+class CunkRight extends React.Component {
+    render(){
+        const {id, title, intro} = this.props;
+        // console.log(this.props);
+        return(
+            <div className="cunk-right">
+                <h4 className="caption" id={id} ref="caption"><Link to={{pathname: `/article/${id}`}}>{title}</Link></h4>
+                <p className="intro">
+                    {intro}
+                </p>
+            </div>
+        )
+    }
 }
 //阅读全文
 const Read = () => (
     <a href="" className="read-all">阅读全文</a>
 )
-
+//绑定文章数据
+const mapStateToProps = (state) => {
+    // console.log(state);
+    return {
+        data: state.article
+    }
+}
+//文章加载事件绑定
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onGain: () => {
+            dispatch(actions.artGain());
+        },
+        onCapitonClick: (id) => {
+            dispatch(actionsDist.distID(id));
+        }
+    }
+}
+let CunkRightDispatch = connect(null, mapDispatchToProps)(CunkRight);
 class ArticleList extends React.Component {
     componentDidMount(){
         this.props.onGain();
@@ -42,7 +66,7 @@ class ArticleList extends React.Component {
                         return (
                             <li className="list-cunk" key={item.id}>
                                 <CunkLeft {...item}/>
-                                <CunkRight {...item}/>
+                                <CunkRightDispatch {...item}/>
                                 <Read />
                             </li>
                         )
@@ -51,21 +75,6 @@ class ArticleList extends React.Component {
                 </ul>
             </section>
         )
-    }
-}
-//绑定文章数据
-const mapStateToProps = (state) => {
-    // console.log(state);
-    return {
-        data: state.article
-    }
-}
-//文章加载事件绑定
-const mapDispatchToProps = (dispatch) => {
-    return {
-        onGain: () => {
-            dispatch(actions.artGain())
-        }
     }
 }
 
