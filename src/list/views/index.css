@@ -153,15 +153,27 @@
     border-radius: 2px;
     font-size: 12px;
     color:#fff;
-    margin: 0 5px;
+    margin: 0 10px 10px 0;
     cursor: pointer;
+    background-color: #828282;
 }
-.genre-list .PS4{
+.genre-list li:nth-of-type(1){
     background-color: #043770;
 }
-
-.genre-list .javascript{
+.genre-list li:nth-of-type(2){
     background-color: #bd9f11;
+}
+.genre-list li:nth-of-type(3){
+    background-color: #f30;
+}
+.genre-list li:nth-of-type(4){
+    background-color: #4a169e;
+}
+.genre-list li:nth-of-type(5){
+    background-color: #51b90f;
+}
+.genre-list li:nth-of-type(6){
+    background-color: #e49217;
 }
 
 .trends-box .char{
@@ -201,6 +213,33 @@
     margin-bottom: 10px;
     color: #666;
     padding-left: 10px;
+}
+/*文章页*/
+.article-body{
+    width: 960px;
+    min-height: 400px;
+    background-color: #fff;
+    padding: 30px 20px;
+    margin: 0 auto;
+}
+.article-title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+    color: #4cc8d7;
+}
+.article-label{
+    text-align: center;
+    line-height: 3;
+}
+.article-label span{
+    font-size: 13px;
+    color: #8d8d8d;
+    margin: 0 10px;
+}
+.article-body article{
+    font-size: 14px;
+    color: #666;
 }
 footer {
     margin-top: 30px;

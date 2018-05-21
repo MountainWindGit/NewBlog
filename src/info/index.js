@@ -1,8 +1,8 @@
 import React from 'react';
 
 import Details from './detail';
-import Head from '../../blog/views/head';
-import Foot from '../../blog/views/foot';
+import Head from '../list/views/head';
+import Foot from '../list/views/foot';
 
 export default () => (
     <React.Fragment>

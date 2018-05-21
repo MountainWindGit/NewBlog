@@ -7,10 +7,9 @@ export const artGainSuccess = (result) => {
     }
 }
 
-
 export const artGain = (label) => {
     return (dispatch) => {
-        console.log(label);
+        // console.log(label);
         let apiUrl = '',
             n = Number(label);
         if(typeof label === 'string'){

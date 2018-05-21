@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import * as actions from '../actions';
-import {actions as actionsDist} from '../../detail/';
 
 //发布时间与分类
 const CunkLeft = ({labels}) => (
@@ -14,14 +13,15 @@ const CunkLeft = ({labels}) => (
         </div>
     </div>
 )
+//记录当前点击文章的ID
+let skip = 0;
 //文章标题简介
 class CunkRight extends React.Component {
     render(){
-        const {id, title, intro} = this.props;
-        // console.log(this.props);
+        const {title, intro} = this.props;
         return(
             <div className="cunk-right">
-                <h4 className="caption" id={id} ref="caption"><Link to={{pathname: `/article/${id}`}}>{title}</Link></h4>
+                <h4 className="caption">{title}</h4>
                 <p className="intro">
                     {intro}
                 </p>
@@ -30,12 +30,11 @@ class CunkRight extends React.Component {
     }
 }
 //阅读全文
-const Read = () => (
-    <a href="" className="read-all">阅读全文</a>
+const Read = ({id}) => (
+    <p onClick={() => {skip = id}}><Link to={{pathname: `/article/${id}`}} className="read-all">阅读全文</Link></p>
 )
 //绑定文章数据
 const mapStateToProps = (state) => {
-    // console.log(state);
     return {
         data: state.article
     }
@@ -43,18 +42,20 @@ const mapStateToProps = (state) => {
 //文章加载事件绑定
 const mapDispatchToProps = (dispatch) => {
     return {
-        onGain: () => {
-            dispatch(actions.artGain());
-        },
-        onCapitonClick: (id) => {
-            dispatch(actionsDist.distID(id));
+        onGain: (id) => {
+            dispatch(actions.artGain(id));
         }
     }
 }
 let CunkRightDispatch = connect(null, mapDispatchToProps)(CunkRight);
 class ArticleList extends React.Component {
+    //列表页加载完成获取数据
     componentDidMount(){
         this.props.onGain();
+    }
+    //组件卸载请求点击文章数据，存入store
+    componentWillUnmount(){
+        this.props.onGain(skip);
     }
     render(){
         const data = this.props.data;
@@ -67,7 +68,7 @@ class ArticleList extends React.Component {
                             <li className="list-cunk" key={item.id}>
                                 <CunkLeft {...item}/>
                                 <CunkRightDispatch {...item}/>
-                                <Read />
+                                <Read {...item}/>
                             </li>
                         )
                     })

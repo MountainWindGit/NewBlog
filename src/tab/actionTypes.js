@@ -1,0 +1,1 @@
+export const GAIN_LABEL = 'GAIN_LABEL';
