@@ -4,11 +4,11 @@ import {Link} from 'react-router-dom';
 import * as actions from '../actions';
 
 //发布时间与分类
-const CunkLeft = ({labels}) => (
+const CunkLeft = ({creat_time, labels}) => (
     <div className="cunk-left">
         <div className="thum"></div>
         <div className="label-b">
-            <span className="time">2018-05-16</span>
+            <span className="time">{creat_time}</span>
             <span className={`classify ${labels}`}>{labels}</span>
         </div>
     </div>

@@ -17,7 +17,7 @@ const Oop = ({data}) => {
         return (
         <div className="article-body">
             <h4 className="article-title">{data[0].title}</h4>
-            <p className="article-label"><span>时间:{data[0].time}</span><span>类别:{data[0].labels}</span></p>
+            <p className="article-label"><span>时间:{data[0].creat_time}</span><span>类别:{data[0].labels}</span></p>
             <article
             //插入字符串类型的HTML数据
             dangerouslySetInnerHTML={{
