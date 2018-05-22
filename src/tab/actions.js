@@ -9,7 +9,7 @@ export const artGainLabel = (tab) => {
 
 export const artGainTab = () => {
     return (dispatch) => {
-        const apiUrl = '/label';
+        const apiUrl = '/apilabel';
         return fetch(apiUrl).then(res => {
             if(res.status !== 200){
                 throw new Error('Fail to get response with status ' + res.status)

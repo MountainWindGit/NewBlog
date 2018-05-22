@@ -5,6 +5,10 @@ import {actions as Actions} from '../list/';
 import Loading from '../img/loading.gif';
 
 
+function escape(str){
+    return str.replace(/<\/script/g,'<\\/script').replace(/<!--/g,'<\\!--');
+}
+
 //文章渲染处理
 const Oop = ({data}) => {
     if(data.length === 0 || data.length > 1){
@@ -14,8 +18,11 @@ const Oop = ({data}) => {
         <div className="article-body">
             <h4 className="article-title">{data[0].title}</h4>
             <p className="article-label"><span>时间:{data[0].time}</span><span>类别:{data[0].labels}</span></p>
-            <article>
-                {data[0].content}
+            <article
+            //插入字符串类型的HTML数据
+            dangerouslySetInnerHTML={{
+                __html: escape(data[0].content)
+            }}>
             </article>
         </div>
         )

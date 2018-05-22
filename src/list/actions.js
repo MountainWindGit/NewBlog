@@ -13,11 +13,11 @@ export const artGain = (label) => {
         let apiUrl = '',
             n = Number(label);
         if(typeof label === 'string'){
-            apiUrl = `/show?label=${label}`;
+            apiUrl = `/apiblog?label=${label}`;
         }else if(!isNaN(n)){
-            apiUrl = `/show?id=${label}`;
+            apiUrl = `/apiblog?id=${label}`;
         }else{
-            apiUrl = `/show`;
+            apiUrl = `/apiblog`;
         }
         return fetch(apiUrl).then(res => {
             // console.log(res);
