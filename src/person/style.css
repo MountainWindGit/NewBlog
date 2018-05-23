@@ -8,10 +8,11 @@
     width: 740px;
     margin-top: 30px;
     box-shadow: 0 2px 10px rgba(0,0,0,.2);
-    padding: 15px 20px;
+    padding: 15px 20px 30px 20px;
     border-radius: 3px;
     box-sizing: border-box;
     background-color: #fff;
+    margin-bottom: 50px;
 }
 
 .container .head-por{
@@ -77,11 +78,10 @@
 .menu-fixed li a:hover{
     color: #333;
 }
-.skill-show .caption{
+.container .caption{
     width: auto;
     font-weight: normal;
     font-size: 18px;
-    margin-top: 14px;
     color: #666;
     text-align: center;
 }
@@ -89,7 +89,9 @@
     width: 516px;
     margin: 35px auto 0 auto;
 }
-
+.skill-show{
+    margin-top: 20px;
+}
 .skills li{
     position: relative;
     width: 516px;
@@ -152,4 +154,58 @@
 }
 .skills .photoshop::after{
     content: 'Photoshop';
+}
+.skills li:nth-of-type(6) {
+    margin-bottom: 0;
+}
+.work-experience,.edu-experience,.interests{
+    width: auto;
+    max-width: 516px;
+    margin: 40px auto 0 auto;
+}
+.work-experience .minute,.edu-experience .minute{
+    margin-top: 30px;
+}
+.minute .work-time{
+    position: relative;
+    color: #666;
+    padding-left: 15px;
+}
+.minute .work-time::after{
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background-color: #f30;
+    border-radius: 50%;
+}
+.edu-experience .work-time::after{
+    background-color: #194079;
+}
+.minute .company,.minute .school{
+    color: #333;
+    font-size: 13px;
+    padding-left: 15px;
+    line-height: 3;
+}
+.minute .job{
+    color: #666;
+    font-size: 12px;
+    padding-left: 15px;
+    line-height: 1;
+}
+.minute .describe{
+    font-size: 12px;
+    padding-left: 15px;
+    color: #505050;
+    line-height: 1.8;
+    margin-top: 10px;
+}
+.interests .enjoy{
+    text-align: center;
+    font-size: 13px;
+    color: #333;
+    line-height: 4;
 }
