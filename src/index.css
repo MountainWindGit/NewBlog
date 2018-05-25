@@ -47,3 +47,50 @@ body{
     zoom:1;
 }
 
+/*登录页*/
+.login-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.login-flex .login-box {
+    width: 300px;
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 1px 4px rgba(220,220,220,.75);
+    text-align: center;
+}
+.login-box .title{
+    text-align: center;
+    font-size: 22px;
+    font-weight: normal;
+    color: #525252;
+    margin-bottom: 30px;
+}
+.login-box input{
+    width: 220px;
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+    padding: 8px;
+    margin-bottom: 20px;
+}
+.login-box .submit {
+    border-radius: 5px;
+    border: 0;
+    padding: 8px 23px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+.login-box .submit:hover{
+    background-color: #3e3e3e;
+}
+/*404*/
+.not-found{
+    text-align: center;
+    line-height: 100vh;
+    font-size: 20vh;
+    color: #dadada;
+}
+

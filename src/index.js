@@ -6,16 +6,12 @@ import store from './store';
 
 import App from './App';
 import './index.css';
-import {BrowserRouter, Switch} from 'react-router-dom';
+
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
     <Provider store={store}>
-        <BrowserRouter>
-            <Switch>
-                <App />
-            </Switch>
-        </BrowserRouter>
+        <App />
     </Provider>
 , document.getElementById('root'));
 registerServiceWorker();
