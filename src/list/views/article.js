@@ -4,15 +4,22 @@ import {Link} from 'react-router-dom';
 import * as actions from '../actions';
 
 //发布时间与分类
-const CunkLeft = ({creat_time, labels}) => (
-    <div className="cunk-left">
-        <div className="thum"></div>
-        <div className="label-b">
-            <span className="time">{creat_time}</span>
-            <span className={`classify ${labels}`}>{labels}</span>
+const CunkLeft = ({creat_time, labels, img_name}) => {
+    //当传入的图片等于undefined时则不添加img标签
+    let img;
+    if(img_name !== 'undefined'){
+        img = <img src={`/${img_name}`} alt='' />;
+    }
+    return  (
+        <div className="cunk-left">
+            <div className="thum">{img}</div>
+            <div className="label-b">
+                <span className="time">{creat_time}</span>
+                <span className={`classify ${labels}`}>{labels}</span>
+            </div>
         </div>
-    </div>
-)
+    )
+}
 //记录当前点击文章的ID
 let skip = 0;
 //文章标题简介

@@ -13,12 +13,19 @@ const App = () => {
     return (
         <BrowserRouter>
             <Switch>
+                {/* //首页 */}
                 <Route exact path='/' component={HomePage} />
+                {/* //关于我 */}
                 <Route path='/about' component={About} />
+                {/* //博客页 */}
                 <Route path='/blog' component={Blog} />
+                {/* //文章页 */}
                 <Route path='/article/:id' component={Details} />
+                {/* //登录页 */}
                 <Route path='/admin' component={Login} />
+                {/* //后台编辑页 */}
                 <Route path='/backstage' component={Backstage} />
+                {/* //404 */}
                 <Route component={NotFound} />
             </Switch>
         </BrowserRouter>

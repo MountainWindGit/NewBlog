@@ -56,8 +56,12 @@
 .cunk-left .thum{
     width: 100%;
     min-height: 134px;
-    background-color: #f5f5f5;
+    background: url('../../img/static-img.jpg') no-repeat center;
     margin-bottom: 15px;
+    overflow: hidden;
+}
+.cunk-left .thum img{
+    width: 100%;
 }
 .cunk-left .time{
     float: left;
@@ -217,7 +221,7 @@
 /*文章页*/
 .article-body{
     width: 960px;
-    min-height: 400px;
+    min-height: 600px;
     background-color: #fff;
     padding: 30px 20px;
     margin: 0 auto;
@@ -238,6 +242,13 @@
     margin: 0 10px;
 }
 .article-body article{
+    font-size: 14px;
+    color: #666;
+}
+.article-body article p {
+    text-indent: 2em;
+    margin-bottom: 15px;
+    line-height: 1.8;
     font-size: 14px;
     color: #666;
 }

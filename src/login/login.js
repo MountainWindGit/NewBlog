@@ -19,7 +19,7 @@ class Login extends React.Component {
             username: this.refs.user.value,
             password: this.refs.pass.value
         }
-        fetch('/admin',{
+        fetch('/mengsir',{
             method: 'POST',
             //设置数据传输形式
             headers: {
@@ -35,7 +35,7 @@ class Login extends React.Component {
                 //登录成功跳转后台管理页面
                 if(resJson.isLogin === 'ok'){
                     sessionStorage.setItem('isLogin',true);
-                    this.context.router.history.push('/backstage');
+                    this.context.router.history.push('/backstage/postarticle');
                 }
             })
         })
@@ -44,7 +44,7 @@ class Login extends React.Component {
         //假如已登录则直接跳转管理页面
         if(sessionStorage.isLogin){
             return (
-                <Redirect to='/backstage' />
+                <Redirect to='/backstage/postarticle' />
             )
         }
         return (
