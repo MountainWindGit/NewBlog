@@ -1,9 +1,10 @@
 import React from 'react';
 import {Motion, spring} from 'react-motion';
+import Self from '../img/self.gif';
 
 //头像简介
 const HeadPor = () => (
-    <div className="head-por"></div>
+    <div className="head-por"><img src={Self} alt="" /></div>
 )
 
 //个人简介

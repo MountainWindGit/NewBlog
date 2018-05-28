@@ -8,7 +8,7 @@ const CunkLeft = ({creat_time, labels, img_name}) => {
     //当传入的图片等于undefined时则不添加img标签
     let img;
     if(img_name !== 'undefined'){
-        img = <img src={`/${img_name}`} alt='' />;
+        img = <img src={`/upload/${img_name}`} alt='' />;
     }
     return  (
         <div className="cunk-left">
