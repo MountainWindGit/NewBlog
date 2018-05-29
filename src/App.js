@@ -1,13 +1,24 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
+//代码分片，按需加载
+import asyncComponent from './AsyncComponent';
+const HomePage = asyncComponent(() => import("./home/"));
+const About = asyncComponent(() => import("./person/"));
+const Blog = asyncComponent(() => import("./list/"));
+const Details = asyncComponent(() => import("./info/"));
+const Login = asyncComponent(() => import("./login/"));
+const Backstage = asyncComponent(() => import("./backstage/"));
+const NotFound = asyncComponent(() => import("./404/"));
 
-import HomePage from './home/';
-import About from './person/';
-import {views as Blog} from './list/';
-import Details from './info/';
-import {views as Login} from './login/';
-import Backstage from './backstage/';
-import NotFound from './404/';
+// import HomePage from './home/';
+// import About from './person/';
+// import Blog from './list/'
+// import Details from './info/';
+// import Login from './login/';
+// import Backstage from './backstage/';
+// import NotFound from './404/';
+
+
 
 const App = () => {
     return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import * as actions from './actions';
-import {actions as BlogActions} from '../list/'
+import * as BlogActions from '../list/actions';
 
 //文章分类
 class Genre extends React.Component {

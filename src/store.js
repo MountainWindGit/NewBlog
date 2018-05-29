@@ -1,7 +1,7 @@
 import {createStore, applyMiddleware, combineReducers} from 'redux';
 import thunkMiddleware from 'redux-thunk';
 
-import {reducer as artReducer} from './list/';
+import artReducer from './list/reducer';
 import {reducer as tabReducer} from './tab/';
 
 let reducer = combineReducers({

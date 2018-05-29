@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {actions as Actions} from '../list/';
+import * as Actions from '../list/actions';
 
 import Loading from '../img/loading.gif';
 
