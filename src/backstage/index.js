@@ -3,7 +3,6 @@ import React from 'react';
 import {Redirect, Link, Route} from 'react-router-dom';
 import {views as PostArticle} from '../postArticle/';
 import ListArticle from './listArticle';
-import './index.css';
 
 const Backstage = ({match}) => {
     if(!sessionStorage.isLogin){

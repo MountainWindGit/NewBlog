@@ -10,16 +10,6 @@ const Login = asyncComponent(() => import("./login/"));
 const Backstage = asyncComponent(() => import("./backstage/"));
 const NotFound = asyncComponent(() => import("./404/"));
 
-// import HomePage from './home/';
-// import About from './person/';
-// import Blog from './list/'
-// import Details from './info/';
-// import Login from './login/';
-// import Backstage from './backstage/';
-// import NotFound from './404/';
-
-
-
 const App = () => {
     return (
         <BrowserRouter>
