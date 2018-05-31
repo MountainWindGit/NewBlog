@@ -82,7 +82,7 @@ class HomePage extends React.Component {
                         </ul>
                     </div>
                </nav>
-               <canvas id="canvas" ref='canvas'></canvas>
+               <canvas id="canvas" ref='canvas' style={{'backgroundColor':'#fff'}}></canvas>
            </React.Fragment>
         )
     }
