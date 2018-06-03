@@ -2,7 +2,7 @@ import React from 'react';
 //路由重定向
 import {Redirect, Link, Route} from 'react-router-dom';
 import {views as PostArticle} from '../postArticle/';
-import ListArticle from './listArticle';
+import ListArticle from '../listArticle/listArticle';
 
 const Backstage = ({match}) => {
     if(!sessionStorage.isLogin){

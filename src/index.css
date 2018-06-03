@@ -705,3 +705,40 @@ footer p {
 .release:hover{
     background-color: #ff5b31;
 }
+
+/*文章管理*/
+.table-box{
+    width: 100%;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 20px;
+    box-shadow: 0 1px 4px rgba(220,220,220,.75);
+}
+.list-table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.list-table th,.list-table td{
+    border: 1px solid #f7f7f7;
+    padding: 15px;
+    text-align: center;
+}
+.list-table td {
+    font-size: 14px;
+    color: #8d8d8d;
+}
+.list-table .title-left{
+    text-align: left;
+    color: #333;
+}
+.list-table .table-btn{
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: #f30;
+    border-radius: 2px;
+    color: #fff;
+    cursor: pointer;
+}
+.list-table .table-btn:hover{
+    background-color: #ff7c5b;
+}
