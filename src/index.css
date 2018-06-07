@@ -333,6 +333,7 @@ body{
     padding: 30px 50px;
     margin: 0 auto;
     box-sizing: border-box;
+    box-shadow: 0 1px 4px rgba(220,220,220,.75);
 }
 .article-title {
     text-align: center;
@@ -741,4 +742,14 @@ footer p {
 }
 .list-table .table-btn:hover{
     background-color: #ff7c5b;
+}
+pre {
+    background-color: #333;
+    padding: 10px;
+}
+pre code {
+    color: #fff;
+    font-family: '微软雅黑';
+    line-height: 1.5;
+    letter-spacing: 1px;
 }
