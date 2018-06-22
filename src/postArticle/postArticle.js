@@ -17,7 +17,7 @@ class PostArticle extends React.Component {
                 editorValue: html
             })
         }
-        editor.create()
+        editor.create();
     }
     render(){
         return (

@@ -238,6 +238,13 @@ body{
     vertical-align: top;
     margin-left: 19px;
 }
+.short-cut.active {
+    position: fixed;
+    top: 0;
+    right: 50%;
+    margin-right: -500px;
+    z-index: 90;
+}
 
 .short-cut .genre-box,.short-cut .trends-box{
     width: 100%;

@@ -59,10 +59,29 @@ class ArticleList extends React.Component {
     //列表页加载完成获取数据
     componentDidMount(){
         this.props.onGain();
+        //还原页面历史位置
+        setTimeout(() => {
+            sessionStorage.pos ? document.documentElement.scrollTop = sessionStorage.pos*1 : document.documentElement.scrollTop = 0;
+            sessionStorage.removeItem('pos');
+        }, 100);
+        //浮动功能块
+        let blogHead = document.querySelector('.blog-head'),
+            short = document.querySelector('.short-cut');
+        document.addEventListener('scroll', () => {
+            if(document.documentElement.scrollTop >= blogHead.clientHeight + 20){
+                if(short.className.indexOf('active') <= -1) short.className += ' active';
+            }else{
+                if(short.className.indexOf('active') > -1) short.className = short.className.replace(' active','');
+            }
+        })
     }
-    //组件卸载请求点击文章数据，存入store
+    /**
+     * 页面卸载将点击的文章数据，存入store
+     * 同时保存当前页面的浏览位置
+     */
     componentWillUnmount(){
         this.props.onGain(skip);
+        sessionStorage.setItem('pos',document.documentElement.scrollTop);
     }
     render(){
         const data = this.props.data;

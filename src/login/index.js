@@ -34,7 +34,7 @@ class Login extends React.Component {
             res.json().then(resJson => {
                 //登录成功跳转后台管理页面
                 if(resJson.isLogin === 'ok'){
-                    sessionStorage.setItem('isLogin',true);
+                    sessionStorage.setItem('token', resJson.token);
                     this.context.router.history.push('/backstage/postarticle');
                 }
             })

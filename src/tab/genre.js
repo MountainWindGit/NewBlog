@@ -49,6 +49,7 @@ const mapDispatchToProps = (dispatch) => {
         onHandleClick : (label) => {
             dispatch(BlogActions.artGain(label));
         },
+        //页面装载完成后生成标签
         onTabGain: () => {
             dispatch(actions.artGainTab());
         }
