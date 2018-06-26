@@ -5,6 +5,7 @@ import {views as PostArticle} from '../postArticle/';
 import ListArticle from '../listArticle/listArticle';
 
 const Backstage = ({match}) => {
+    //ajax同步请求（暂定）
     let http = new XMLHttpRequest(),
         degree;
     http.open("POST","/mengsir",false);
@@ -12,12 +13,13 @@ const Backstage = ({match}) => {
     http.setRequestHeader('access-token', sessionStorage.token);
     http.send();
     if(http.readyState === 4 && http.status === 200){
-        degree = JSON.parse(http.response).tokenHead;
-        if(degree === 'undefined'){
+        degree = JSON.parse(http.response).isLogin;
+        // noUse为未登录状态,logged为已登录状态
+        if(degree === 'noUse'){
             return (
                 <Redirect to='/admin' />
             )
-        }else{
+        }else if(degree === 'logged'){
             return (
                 <div className="backstage-box">
                     <ul className="backstage-menu">

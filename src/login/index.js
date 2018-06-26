@@ -1,7 +1,6 @@
 import React from 'react';
 //异步请求后，路由跳转
 import PropTypes from 'prop-types';
-import { Redirect } from 'react-router-dom';
 
 class Login extends React.Component {
     constructor(props){
@@ -33,36 +32,50 @@ class Login extends React.Component {
             }
             res.json().then(resJson => {
                 //登录成功跳转后台管理页面
-                if(resJson.isLogin === 'ok'){
+                if(resJson.isLogin === 'login'){
                     sessionStorage.setItem('token', resJson.token);
                     this.context.router.history.push('/backstage/postarticle');
                 }
             })
         })
     }
+    componentWillMount(){
+        //检测是否为已登录状态
+        fetch('/mengsir',{
+            method: 'POST',
+            //设置数据传输形式
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'access-token': sessionStorage.token
+            }
+        }).then(res => {
+            if(res.status !== 200){
+                throw new Error('登录请求失败')
+            }
+            res.json().then(resJson => {
+                if(resJson.isLogin === 'logged'){
+                    this.context.router.history.push('/backstage/postarticle');
+                }
+            })
+        })
+    }
     render(){
-        //假如已登录则直接跳转管理页面
-        if(sessionStorage.isLogin){
             return (
-                <Redirect to='/backstage/postarticle' />
-            )
-        }
-        return (
-            <div className="login-flex">
-                <div className="login-box">
-                    <h3 className="title">椰子猪的那点事</h3>
-                    <form onSubmit={this.handleSubmit}>
-                        <div className="username">
-                            <input type="text" name="username" placeholder="用户名" ref="user"/>
-                        </div>
-                        <div className="password">
-                            <input type="password" name="password" placeholder="密码" ref="pass"/>
-                        </div>
-                        <button type="submit" className="submit">登录</button>
-                    </form>
+                <div className="login-flex">
+                    <div className="login-box">
+                        <h3 className="title">椰子猪的那点事</h3>
+                        <form onSubmit={this.handleSubmit}>
+                            <div className="username">
+                                <input type="text" name="username" placeholder="用户名" ref="user"/>
+                            </div>
+                            <div className="password">
+                                <input type="password" name="password" placeholder="密码" ref="pass"/>
+                            </div>
+                            <button type="submit" className="submit">登录</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-        )
+            )
     }
 }
 

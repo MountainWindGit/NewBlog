@@ -6,8 +6,6 @@ import store from './store';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import './index.css';
 
-import registerServiceWorker from './registerServiceWorker';
-
 //代码分片，按需加载
 import asyncComponent from './AsyncComponent';
 const HomePage = asyncComponent(() => import("./home/"));
@@ -46,4 +44,3 @@ ReactDOM.render(
         <App />
     </Provider>
 , document.getElementById('root'));
-registerServiceWorker();
