@@ -70,8 +70,16 @@ const Skills = () => (
 const Work = () => (
     <div className="work-experience">
         <h3 className="caption">工作经历 & experience</h3>
+        {/* 经历2 */}
         <div className="minute">
-            <h5 className="work-time">2016.08&nbsp;-&nbsp;&nbsp;2018.01</h5>
+            <h5 className="work-time">2018.04&nbsp;-&nbsp;&nbsp;至今</h5>
+            <p className="company">南京星智万和网络科技有限公司</p>
+            <p className="job">web前端</p>
+            <p className="describe">负责公司产品前端开发工作</p>
+        </div>
+        {/* 经历1 */}
+        <div className="minute">
+            <h5 className="work-time">2016.08&nbsp;-&nbsp;&nbsp;2018.03</h5>
             <p className="company">南京苏迪科技有限公司</p>
             <p className="job">web前端设计</p>
             <p className="describe">期间负责公司业务产品的前端工作，根据业务需求编写代码，主要技术为前端三件套，数据交互比较常用Ajax和Fetch;
